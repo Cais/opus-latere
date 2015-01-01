@@ -80,4 +80,4 @@ included with the theme will simply be a copy of the noted page.
 See `changelog.txt` in theme root folder
 
 == Review Tickets ==
-* TBA
+* https://themes.trac.wordpress.org/ticket/22409 - version 1.0 - New Year's Day 2015
