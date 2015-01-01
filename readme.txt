@@ -47,6 +47,7 @@ As Opus Latere is a Child-Theme of Opus Primus, all related license terms and
 copyrights are continued from the Parent-Theme's references.
 
 == Screenshots ==
+1. Theme with viewport width set to a 4:3 ratio
 
 == Basic FAQ ==
 Please see the `readme.txt` file found under the `../wp-content/opus-primus/`
