@@ -71,15 +71,35 @@ function opus_latere_nav_after() {
 
 add_action( 'opus_nav_after', 'opus_latere_nav_after' );
 
+/**
+ * Enqueue Scripts and Styles
+ *
+ * @package OpusLatere
+ * @since   0.1
+ *
+ * @uses    get_stylesheet_directory_uri
+ * @uses    get_template_directory_uri
+ * @uses    wp_enqueue_script
+ * @uses    wp_enqueue_style
+ * @uses    wp_get_theme
+ */
 function opus_latere_enqueue_scripts_and_styles() {
+
+	/** @var object $opus_latere_theme_data - retrieve theme data */
+	$opus_latere_theme_data = wp_get_theme();
+
+	/** @var object $opus_primus_parent_theme_data - retrieve parent theme data */
+	$opus_primus_parent_theme_data = $opus_latere_theme_data->parent();
+
 	/** Enqueue Theme Scripts */
 	/** Enqueue Opus Latere JavaScripts which will enqueue jQuery as a dependency */
-	wp_enqueue_script( 'opus-latere', get_stylesheet_directory_uri() . '/js/opus-latere.js', array( 'jquery' ), opus_primus_theme_version(), true );
+	wp_enqueue_script( 'opus-latere-js', get_stylesheet_directory_uri() . '/js/opus-latere.js', array( 'jquery' ), $opus_latere_theme_data['Version'], true );
 
-	/** Parent-Theme base stylesheet */
-	wp_enqueue_style( 'Opus-Primus-Parent-Theme', get_template_directory_uri() . '/style.css' );
+	/** Enqueue Theme Styles */
+	/** Parent-Theme stylesheets - base stylesheet */
+	wp_enqueue_style( 'Opus-Primus-Parent-Theme', get_template_directory_uri() . '/style.css', array(), $opus_primus_parent_theme_data['Version'], 'screen' );
 	/** Main Theme Elements with dashicons dependency */
-	wp_enqueue_style( 'Opus-Latere', get_stylesheet_directory_uri() . '/css/opus-latere.css', array( 'dashicons' ), opus_primus_theme_version(), 'screen' );
+	wp_enqueue_style( 'Opus-Latere', get_stylesheet_directory_uri() . '/css/opus-latere.css', array( 'dashicons' ), $opus_latere_theme_data['Version'], 'screen' );
 }
 
 add_action( 'wp_enqueue_scripts', 'opus_latere_enqueue_scripts_and_styles' );

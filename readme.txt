@@ -53,6 +53,10 @@ copyrights are continued from the Parent-Theme's references.
 Please see the `readme.txt` file found under the `../wp-content/opus-primus/`
 folder for common questions and answers already addressed in the Parent-Theme.
 
+Q: I'm using an older version of Opus Primus, why won't this Child-Theme work?
+
+Opus Latere requires Opus Primus to be at least version 1.3 or later to work.
+
 == Notes ==
 1. $content_width is set based on how many columns being used and the common
 display size of 1024px * 768px.
